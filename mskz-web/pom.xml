@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>mskz</artifactId>
+        <groupId>com.mskz</groupId>
+        <version>2.0.2-20190526</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>mskz-web</artifactId>
+    <packaging>war</packaging>
+
+    <name>mskz-web</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+
+    </dependencies>
+
+    <build>
+        <finalName>mskz-web</finalName>
+        <plugins>
+            <!--
+                1.使用maven自带的tomcat插件
+                2.但默认使用tomcat6，而tomcat6不支持jdk1.8版本，这里就需要添加tomcat7-maven-plugin的插件
+               注意：1。如果你的版本是tomcat7-maven-plugin 2.0 的话，由于它不支持 jdk 1.8，
+                     2.所以把它换成 tomcat7-maven-plugin 2.2就行了
+                     官方并没有tomcat8-maven-plugin，这里只要使用tomcat7-maven-plugin就可以使用tomcat8.5
+             -->
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <port>8080</port>
+                    <uriEncoding>UTF-8</uriEncoding>
+                    <url>http://localhost:8080/</url>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+</project>
