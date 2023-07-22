@@ -25,7 +25,7 @@
         <maven.compiler.target>1.7</maven.compiler.target>
 
         <version.servlet>2.5</version.servlet>
-        <version.spring>3.2.6.RELEASE</version.spring>
+        <version.spring>5.2.20.RELEASE</version.spring>
         <version.junit>4.11</version.junit>
 
     </properties>
